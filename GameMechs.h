@@ -21,14 +21,18 @@ class GameMechs
     private:
         char input;
         bool exitFlag;
-        
+
         int boardSizeX;
         int boardSizeY;
+        objPos foodPos;  // For tracking food position
 
-    public:
+
+public:
         GameMechs();
         GameMechs(int boardX, int boardY);
-        
+
+        void generateFood(objPos blockOff);
+        void getFoodPos(objPos &returnPos);
         bool getExitFlagStatus();
         void setExitTrue();
 
@@ -38,8 +42,22 @@ class GameMechs
 
         int getBoardSizeX();
         int getBoardSizeY();
-      
+
 
 };
+
+void GameMechs::generateFood(objPos blockOff) {
+    srand(time(NULL)); // Seed the random number generator
+    do {
+        foodPos.x = rand() % boardSizeX;
+        foodPos.y = rand() % boardSizeY;
+    } while (foodPos.x == blockOff.x && foodPos.y == blockOff.y);
+    foodPos.symbol = '*'; // Set the food symbol
+}
+
+void GameMechs::getFoodPos(objPos &returnPos) {
+    returnPos = foodPos;
+}
+
 
 #endif
