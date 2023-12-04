@@ -25,15 +25,15 @@ int main()
 
     Initialize();
 
-//    while(!exitFlag)
-//    {
+    while(!exitFlag)
+    {
         DrawScreen();
-//        GetInput();
-//        RunLogic();
-//        LoopDelay();
-//    }
+        GetInput();
+        RunLogic();
+        LoopDelay();
+    }
 
-//    CleanUp();
+    CleanUp();
 
 }
 
