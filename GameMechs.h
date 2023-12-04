@@ -22,12 +22,6 @@ class GameMechs
         char input;
         bool exitFlag;
 
-<<<<<<< HEAD
-=======
-        bool loseFlag;
-        int score;
-
->>>>>>> c60b4632cdf69a7c8db27804c8c85692b5fd863c
         int boardSizeX;
         int boardSizeY;
         objPos foodPos;  // For tracking food position
@@ -48,36 +42,11 @@ public:
 
         int getBoardSizeX();
         int getBoardSizeY();
-<<<<<<< HEAD
-=======
-
-        bool getLoseFlagStatus();//added
-        int getScore();//added
-        void incrementScore();//added      
-        void setLoseFlag(); //added
-
-
->>>>>>> c60b4632cdf69a7c8db27804c8c85692b5fd863c
 
         void generateFood(objPosArrayList *snakeBody);
 };
 
-<<<<<<< HEAD
 
-=======
-void GameMechs::generateFood(objPos blockOff) {
-    srand(time(NULL)); // Seed the random number generator
-    do {
-        foodPos.x = rand() % boardSizeX;
-        foodPos.y = rand() % boardSizeY;
-    } while (foodPos.x == blockOff.x && foodPos.y == blockOff.y);
-    foodPos.symbol = '*'; // Set the food symbol
-}
-
-void GameMechs::getFoodPos(objPos &returnPos) {
-    returnPos = foodPos;
-}
->>>>>>> c60b4632cdf69a7c8db27804c8c85692b5fd863c
 
 
 #endif
