@@ -5,7 +5,7 @@ Player::Player(GameMechs* thisGMRef) {
     myDir = STOP;
     playerPosList = new objPosArrayList(); // Initialize the list
     // Insert the initial position
-    objPos initialPos{/* initial x position */, /* initial y position */, '*'};
+    objPos initialPos{mainGameMechsRef->getBoardSizeX()/2, mainGameMechsRef->getBoardSizeY()/2, '*'};
     playerPosList->insertHead(initialPos);
 }
 

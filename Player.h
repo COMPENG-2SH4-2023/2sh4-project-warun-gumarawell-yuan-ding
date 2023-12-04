@@ -15,6 +15,7 @@ public:
     void getPlayerPosList(objPosArrayList*& returnList); // Updated to return list
     void updatePlayerDir();
     void movePlayer();
+    int getScore();
 
 private:
     objPosArrayList* playerPosList; // Replaced playerPos with playerPosList

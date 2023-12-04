@@ -22,6 +22,9 @@ class GameMechs
         char input;
         bool exitFlag;
 
+        bool loseFlag;
+        int score;
+
         int boardSizeX;
         int boardSizeY;
         objPos foodPos;  // For tracking food position
@@ -42,6 +45,12 @@ public:
 
         int getBoardSizeX();
         int getBoardSizeY();
+
+        bool getLoseFlagStatus();//added
+        int getScore();//added
+        void incrementScore();//added      
+        void setLoseFlag(); //added
+
 
 
 };
