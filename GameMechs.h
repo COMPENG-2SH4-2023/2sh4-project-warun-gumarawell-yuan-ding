@@ -21,14 +21,18 @@ class GameMechs
     private:
         char input;
         bool exitFlag;
-        
+
         int boardSizeX;
         int boardSizeY;
+        objPos foodPos;  // For tracking food position
 
-    public:
+
+public:
         GameMechs();
         GameMechs(int boardX, int boardY);
-        
+
+        void generateFood(objPos blockOff);
+        void getFoodPos(objPos &returnPos);
         bool getExitFlagStatus();
         void setExitTrue();
 
@@ -38,8 +42,11 @@ class GameMechs
 
         int getBoardSizeX();
         int getBoardSizeY();
-      
 
+        void generateFood(objPosArrayList *snakeBody);
 };
+
+
+
 
 #endif

@@ -5,30 +5,22 @@
 #include "objPos.h"
 #include "objPosArrayList.h"
 
-class Player
-{
-    // Construct the remaining declaration from the project manual.
+class Player {
+public:
+    enum Dir { UP, DOWN, LEFT, RIGHT, STOP };
 
-    // Only some sample members are included here
+    Player(GameMechs* thisGMRef);
+    ~Player();
 
-    // You will include more data members and member functions to complete your design.
+    void getPlayerPosList(objPosArrayList*& returnList); // Updated to return list
+    void updatePlayerDir();
+    void movePlayer();
+    int getScore();
 
-    public:
-        enum Dir {UP, DOWN, LEFT, RIGHT, STOP};  // This is the direction state
-
-        Player(GameMechs* thisGMRef);
-        ~Player();
-
-        void getPlayerPos(objPos &returnPos); // Upgrade this in iteration 3.
-        void updatePlayerDir();
-        void movePlayer();
-
-    private:
-        objPos playerPos;   // Upgrade this in iteration 3.       
-        enum Dir myDir;
-
-        // Need a reference to the Main Game Mechanisms
-        GameMechs* mainGameMechsRef;
+private:
+    objPosArrayList* playerPosList; // Replaced playerPos with playerPosList
+    Dir myDir;
+    GameMechs* mainGameMechsRef;
 };
 
 #endif
